@@ -1,0 +1,8 @@
+{
+  "name": "Apex Bank Admin Dashboard",
+  "description": "Futuristic, enterprise-grade super admin dashboard for Apex Bank to manage customers, employees, branches, loans, credit cards, transactions, KYC, and real-time security threats.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

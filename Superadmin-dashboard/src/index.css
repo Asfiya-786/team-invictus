@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: #fdf6f9 !important;
+  color: #3a2072 !important;
+  font-family: var(--font-sans) !important;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+/* Base text color to ensure no black */
+* {
+  color: inherit;
+}
+p, span, div, li, td, th {
+  color: #5c4482;
+}
+
+h1:not(#apex-ai-assistant-wrapper *), 
+h2:not(#apex-ai-assistant-wrapper *), 
+h3:not(#apex-ai-assistant-wrapper *), 
+h4:not(#apex-ai-assistant-wrapper *), 
+h5:not(#apex-ai-assistant-wrapper *), 
+h6:not(#apex-ai-assistant-wrapper *), 
+.card-title {
+  color: #3a2072 !important;
+  font-family: var(--font-display) !important;
+}
+
+/* Background soft decorative clouds/blobs to mimic the image background */
+#root::before {
+  content: "";
+  position: fixed;
+  top: -20vh;
+  left: -20vw;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 185, 205, 0.4) 0%, rgba(255, 185, 205, 0) 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#root::after {
+  content: "";
+  position: fixed;
+  bottom: -20vh;
+  right: -20vw;
+  width: 80vw;
+  height: 80vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 185, 205, 0.4) 0%, rgba(255, 185, 205, 0) 70%);
+  filter: blur(70px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* The actual "glass" containers like sidebar and cards */
+.glass-container:not(#apex-ai-assistant-wrapper *), 
+.glass-card:not(#apex-ai-assistant-wrapper *),
+.luxury-glass:not(#apex-ai-assistant-wrapper *),
+[class*="bg-[#0"]:not(#apex-ai-assistant-wrapper *),
+[class*="bg-[#1"]:not(#apex-ai-assistant-wrapper *),
+[class*="bg-slate-9"]:not(#apex-ai-assistant-wrapper *),
+aside:not(#apex-ai-assistant-wrapper *),
+.bg-white:not(#apex-ai-assistant-wrapper *) {
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(25px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 8px 32px 0 rgba(240, 180, 200, 0.1) !important;
+  border-radius: 24px !important;
+}
+
+/* Sidebar Specific */
+aside:not(#apex-ai-assistant-wrapper *) {
+  border-radius: 28px !important;
+  margin: 12px !important;
+  height: calc(100vh - 24px) !important;
+}
+
+/* The active state button in the sidebar */
+.active-sidebar-item-btn,
+.active {
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 20px rgba(109, 40, 217, 0.25) !important;
+  border-radius: 16px !important;
+  border: none !important;
+}
+.active-sidebar-item-btn *:not(#apex-ai-assistant-wrapper *),
+.active *:not(#apex-ai-assistant-wrapper *) {
+  color: #ffffff !important;
+}
+
+/* Secondary/light action buttons - Send Money, Request, Top Up */
+button:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn):not(.active):not(.primary-btn):not([type="submit"]):not([class*="bg-[#"]):not([class*="bg-red"]) {
+  background: rgba(255, 240, 245, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 15px rgba(240, 180, 200, 0.3) !important;
+  color: #3a2072 !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+button:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn):not(.active):not(.primary-btn):not([type="submit"]):not([class*="bg-[#"]):not([class*="bg-red"]):hover {
+  background: rgba(255, 255, 255, 1) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(240, 180, 200, 0.4) !important;
+}
+
+button:not(#apex-ai-assistant-wrapper *) *:not(.active-sidebar-item-btn *):not(.active *):not(.primary-btn *):not([type="submit"] *):not([class*="bg-[#"] *):not([class*="bg-red"] *) {
+  color: #3a2072 !important;
+}
+
+/* Primary dark buttons (e.g. submit forms or explicit primary actions) */
+button.primary-btn, button[type="submit"], .bg-indigo-600 {
+  background: #4c2b83 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 15px rgba(76, 43, 131, 0.25) !important;
+  border: none !important;
+}
+button.primary-btn *, button[type="submit"] *, .bg-indigo-600 * {
+  color: #ffffff !important;
+}
+
+/* Muted or subtitle text colors */
+.text-slate-400:not(#apex-ai-assistant-wrapper *), 
+.text-gray-400:not(#apex-ai-assistant-wrapper *), 
+.text-slate-500:not(#apex-ai-assistant-wrapper *), 
+.text-gray-500:not(#apex-ai-assistant-wrapper *) {
+  color: #725b96 !important;
+}
+
+/* Remove default dark backgrounds */
+.bg-slate-900, .bg-slate-950, .bg-[#070c2e], .bg-[#0a1135] {
+  background: transparent !important;
+}
+
+/* Make big text standout in deep purple */
+.text-4xl, .text-5xl, .text-6xl {
+  color: #3a2072 !important;
+  font-weight: 800 !important;
+  font-family: var(--font-display) !important;
+}
+
+/* Change random white text to dark purple in light theme */
+.text-white:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn *):not(.active *):not(.primary-btn *):not([type="submit"] *) {
+  color: #3a2072 !important;
+}
+
+/* Input elements */
+input:not(#apex-ai-assistant-wrapper *), select:not(#apex-ai-assistant-wrapper *), textarea:not(#apex-ai-assistant-wrapper *) {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 185, 205, 0.3) !important;
+  border-radius: 12px !important;
+  color: #3a2072 !important;
+  padding: 8px 12px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: #f472b6 !important;
+}
+
+input::placeholder {
+  color: rgba(58, 32, 114, 0.4) !important;
+}
+
+/* Badges / Status colors overrides */
+.bg-emerald-500, .bg-emerald-100 {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: rgb(5, 150, 105) !important;
+}
+.bg-emerald-500 *, .bg-emerald-100 * { color: inherit !important; }
+
+.bg-rose-500, .bg-red-500, .bg-red-100, .bg-rose-100 {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: rgb(185, 28, 28) !important;
+}
+.bg-rose-500 *, .bg-red-500 *, .bg-red-100 *, .bg-rose-100 * { color: inherit !important; }
+
+/* Keep modal backgrounds glassy */
+.fixed.inset-0.bg-black\/35, [class*="bg-black/"] {
+  background: rgba(255, 230, 240, 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
