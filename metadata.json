@@ -1,0 +1,6 @@
+{
+  "name": "Apex Bank Dashboard",
+  "description": "An immersive, matte-dark premium Customer Banking Dashboard styled with custom glowing widgets, credit loans integration, real-time transaction ledger adjustments, and comprehensive profile and verification systems.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
