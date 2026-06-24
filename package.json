@@ -1,0 +1,16 @@
+{
+  "name": "team-invictus",
+  "version": "1.0.0",
+  "description": "Apex Bank Master Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18"
+  }
+}

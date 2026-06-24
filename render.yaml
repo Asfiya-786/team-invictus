@@ -1,8 +1,10 @@
 services:
-  - type: static
+  - type: web
     name: team-invictus
-    buildCommand: echo "Build skipped - using pre-built files"
-    staticPublishPath: ./
-    routes:
-      - path: /*
-        destination: /index.html
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
