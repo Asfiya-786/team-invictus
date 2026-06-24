@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: team-invictus
+    buildCommand: echo "Build skipped - using pre-built files"
+    staticPublishPath: ./
+    routes:
+      - path: /*
+        destination: /index.html
