@@ -4,10 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apex Bank — Master Portal</title>
-  <script type="module" crossorigin src="/assets/index-B41dJfF_.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-g98KBINh.css">
+  <link rel="stylesheet" crossorigin href="assets/index-g98KBINh.css">
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    (function(){
+      let redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="assets/index-B41dJfF_.js"></script>
 </body>
 </html>
