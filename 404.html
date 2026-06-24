@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Apex Bank — Master Portal</title>
+    <script>
+      sessionStorage.redirect = location.href;
+    </script>
+    <meta http-equiv="refresh" content="0;URL='/team-invictus/'">
   </head>
   <body>
-    <script>
-      // GitHub Pages 404 redirect for SPA routing
-      if (location.pathname !== '/team-invictus/') {
-        // Store the original path
-        sessionStorage.redirect = location.href;
-        // Redirect to index
-        location.href = '/team-invictus/';
-      }
-    </script>
   </body>
 </html>
